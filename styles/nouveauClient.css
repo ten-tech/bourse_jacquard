@@ -1,0 +1,803 @@
+/* ================ CSS DU FORMULAIRE D'INSCRIPTION ================= */
+* {
+  padding: 0;
+  margin: 0;
+  /*box-sizing: border-box;*/
+}
+
+.body {
+  background: linear-gradient(to right, #833ab4, rgb(121, 177, 241), #0a1086);
+  background-size: 400% 400%;
+  animation: animate-body 10s infinite ease-in-out;
+  width: 100%;
+}
+
+@keyframes animate-body {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.body>input {
+  font-family: 'Poppins', sans-serif;
+  background-size: 100% 100%;
+  position: sticky;
+}
+
+.allForYou {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: rgba(83, 163, 200, 0.65);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-right: 6px double #3427ec;
+  border-left: 6px double #3427ec;
+  border-radius: 0px 40px 0px 40px;
+  width: 75%;
+  margin-left: 15%;
+
+}
+
+#formForForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0px 40px 0px 40px;
+}
+
+#formForForm>#allH1 {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande";
+  font-size: 30px;
+  background-color: transparent;
+  border-bottom: 10px double black;
+  text-align: center;
+}
+
+/* Cette partie commence à me faire chier */
+.containerForCivilite {
+  background: transparent;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Pour la civilité */
+.containerForCivilite #icone-radio-civilite {
+  display: inline-flex;
+}
+
+/* Screen Reader Only est pratique pour les aveugles et malvoyants */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  /*width: 320px; */
+}
+
+/* appearance : none lui indique de ne pas afficher le radio */
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+}
+
+input[type="radio"]+label {
+  border: 3px solid transparent;
+}
+
+input[type="radio"]:checked+label {
+  border-top: 5px double rgb(4, 137, 246);
+  border-bottom: 5px double rgb(4, 137, 246);
+  border-radius: 0px 10px 0px 10px;
+  animation: checkedAnimation 1s cubic-bezier(0.11, 0, 0.5, 0) 0s 1 normal forwards;
+}
+
+@keyframes checkedAnimation {
+  0% {
+    opacity: 0;
+    transform: rotate(-540deg) scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+#icone-radio-civilite>label {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 20px;
+}
+
+#icone-radio-civilite label>span {
+  text-align: bottom;
+}
+
+#icone-radio-civilite:hover {
+  background-image: url("../icones/bourse1.jpg");
+  background-size: cover;
+  border-radius: 5px;
+}
+
+/*Pour le nom et prénom */
+
+legend {
+  color: black;
+  font-size: 20px;
+  font-family: monospace;
+  margin: 15px;
+
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: white;
+  box-shadow: 5px 5px 24px #000000;
+}
+
+#nameSection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-wrap: wrap;
+  background-color: white;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+#nameSection>div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+#nameSection>div>input:hover {
+  border-bottom: 3px solid blue;
+  border-top: 3px solid blue;
+}
+
+section {
+  margin: 15px;
+  width: auto;
+  align-items: center;
+}
+
+#informationSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: white;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+#informationSection>div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+}
+
+#informationSection>div>input:hover {
+  border-bottom: 3px solid blue;
+  border-top: 3px solid blue;
+}
+
+#conseiller {
+
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background: #e0e0e0;
+  box-shadow: 8px 8px 6px #bebebe,
+    -8px -8px 6px #ffffff;
+}
+
+.select-control {
+  width: 100%;
+  min-height: 5vh;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.select-control>option {
+  background-color: rgba(125, 125, 227, 0.434);
+  cursor: pointer;
+}
+
+.submit {
+  display: inline-block;
+  background-color: black;
+  color: #fff;
+  padding: 10px 40px;
+  border: 3px solid #3c67e3;
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.submit:hover {
+  animation: pulsate 1s ease-in-out;
+}
+
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 25px #5ddcff, 0 0 50px #4e00c2;
+  }
+}
+
+#inputID {
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  height: 30px;
+}
+
+.customer_exists {
+  background: rgba(33, 243, 254, 0.35);
+  box-shadow: 5px -5px 10px #2c3338,
+    -5px 5px 10px #aecbe2;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 90%;
+  margin-left: 0%;
+  font-size: 25px;
+  font-family: "Helvetica Neue";
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.customer_exists>a {
+  text-decoration: none;
+}
+
+.execution {
+  background: rgba(33, 243, 254, 0.35);
+  box-shadow: 5px -5px 10px #2c3338,
+    -5px 5px 10px #aecbe2;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 90%;
+  margin-left: 0%;
+  font-size: 25px;
+  font-family: "Helvetica Neue";
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.erreur1 {
+  position: static;
+  background: rgba(33, 243, 254, 0.35);
+  box-shadow: 5px -5px 10px #2c3338,
+    -5px 5px 10px #aecbe2;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 90%;
+  font-size: 25px;
+  font-family: "Helvetica Neue";
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#globalerror {
+  position: static;
+  background: rgba(33, 243, 254, 0.35);
+  box-shadow: 5px -5px 10px #2c3338,
+    -5px 5px 10px #aecbe2;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  color: rgb(255, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.295);
+  width: 90%;
+  font-size: 25px;
+  font-family: "Helvetica Neue";
+  text-align: center;
+}
+
+/* ************************************************************************************************
+================ Creation de mot de passe =================================================*/
+.passwordForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0px 40px 0px 40px;
+  background-color: rgb(174, 205, 255);
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 10px;
+}
+
+.divClass {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+}
+
+
+/************************************************************************************************
+======================= CSS du fichier de connection des clients ============================
+************************************************************************************************/
+.container {
+  margin-top: 5%;
+  position: relative;
+  width: 80%;
+  margin-left: 10%;
+  min-height: 60vh;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 5px -5px 10px #2c3338,
+    -5px 5px 10px #aecbe2;
+  background: linear-gradient(to right, #e6dfeb, rgb(205, 225, 247), #95959d);
+  background-size: 400% 400%;
+  animation: animate-body 10s infinite ease-in-out;
+}
+
+.forms-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.connectionForm>h1 {
+  font-size: 2.2rem;
+  color: #444;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.loginSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: 50%;
+  background-color: transparent;
+}
+
+.loginSection>#divClass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-evenly;
+}
+
+#divClass>label {
+  font-size: 1.5em;
+  font-family: Georgia,
+    serif;
+  text-align: center;
+}
+
+.NewPerso>p {
+  display: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+
+}
+
+#link-a {
+  text-decoration: none;
+}
+
+#link-a:hover {
+  background-color: rgb(168, 232, 234);
+}
+
+.advisor_checker {
+  position: static;
+  background: rgba(33, 243, 254, 0.35);
+  box-shadow: 5px -5px 10px #2c3338,
+    -5px 5px 10px #aecbe2;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 90%;
+  font-size: 25px;
+  font-family: "Helvetica Neue";
+  text-align: center;
+}
+
+#submit {
+  display: inline-block;
+  background-color: black;
+  color: #fff;
+  padding: 10px 40px;
+  border: 3px solid #3c67e3;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+#submit:hover {
+  animation: pulsate 2s ease-in-out;
+}
+
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 25px #5ddcff, 0 0 50px #4e00c2;
+  }
+}
+
+.customer_checker {
+  position: static;
+  background: rgba(33, 243, 254, 0.35);
+  box-shadow: 5px -5px 10px #2c3338,
+    -5px 5px 10px #aecbe2;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 90%;
+  font-size: 25px;
+  font-family: "Helvetica Neue";
+  text-align: center;
+}
+
+/************************************************************************************************
+======================= CSS du fichier de navigation  ============================
+************************************************************************************************/
+
+.navBarre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: rgb(122, 90, 192);
+  color: #fff;
+  height: auto;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  gap: 0;
+  position: sticky;
+}
+
+.navBarre>.nav_logo {
+  font-size: 32px;
+}
+
+.nav_list {
+  list-style: none;
+  display: flex;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.nav_list>li>a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  font-family: "Helvetica Neue";
+  font-size: 18px;
+}
+
+.nav_list>li>a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(0, 200, 255);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .5s;
+}
+
+.nav_list>li>a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/************************************************************************************************
+======================= CSS du fichier de compte_bancaire ============================
+************************************************************************************************/
+
+.compte_info,
+#synthese {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 70%;
+  height: 50%;
+  margin-left: 15%;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  border: 5px solid black;
+  background: linear-gradient(145deg, #cacaca, #d4f6f6);
+  box-shadow: 22px 22px 57px #636363,
+    4px 4px 4px #98e1f5;
+}
+
+.compte_info>section,
+.contact_advisor>section>fieldset>section>span>aside {
+  background-color: rgba(0, 0, 0, 0.537);
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+}
+
+.compte_client>p {
+  font-size: 25px;
+  font-family: "Helvetica Neue";
+  margin: auto;
+  line-height: 44px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.compte_client>span .contact_advisor>span {
+  display: flex;
+  flex-direction: column;
+}
+
+/*.compte_client>span>#customer_information {}*/
+
+/**************************************
+* Pour faire des achats ou des ventes *
+***************************************/
+
+#selling_data,
+.contact_advisor {
+  background-color: rgba(0, 0, 0, 0.655);
+  color: white;
+  height: auto;
+  width: auto;
+  box-shadow: 5px -5px 5px #2c3338;
+}
+
+.searchBox {
+  position: absolute;
+  margin-top: -107px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.searchBox:hover>.searchInput {
+  width: 440px;
+  padding: 0 6px;
+}
+
+.searchBox:hover>.searchButton {
+  background: white;
+  color: #2f3640;
+}
+
+.searchButton {
+  color: white;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2f3640;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+
+}
+
+@media screen and (max-width: 620px) {
+  .searchBox:hover>.searchInput {
+    width: 150px;
+    padding: 0 6px;
+  }
+}
+
+#search_image {
+  width: 20px;
+  height: 20px;
+}
+
+
+#buying_data {
+  margin-top: 8%;
+  background-color: rgba(0, 0, 0, 0.655);
+  color: white;
+  height: auto;
+  width: auto;
+  box-shadow: 5px -5px 5px #2c3338;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 10%;
+
+}
+
+#buying_data>section {
+  text-align: center;
+}
+
+.data_button {
+  object-fit: cover;
+  width: auto;
+  aspect-ratio: 1/1;
+  margin: 5px;
+  font-size: 15px;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+}
+
+.data_button>h1 {
+  margin-top: -45px;
+
+}
+
+.contact_advisor>section {
+  width: 100%;
+  height: auto;
+}
+
+#message {
+  font-size: 15px;
+  padding: 15px;
+  text-decoration: none;
+  position: relative;
+}
+
+
+
+.for_conversation {
+  background-color: rgba(0, 0, 0, 0.573);
+  resize: vertical;
+  overflow: scroll;
+  max-height: 180px;
+  max-width: auto;
+}
+
+#discussion>.vous {
+  padding: 10px;
+  width: 60%;
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: rgba(162, 0, 255, 0.372);
+
+}
+
+.date {
+  margin-top: 0px;
+  text-align: right;
+  width: 60%;
+  color: rgb(0, 255, 247);
+
+}
+
+.object {
+  margin-bottom: 10px;
+}
+
+.messenger {
+  background-color: black;
+  max-height: 380px;
+  max-width: 90%;
+
+}
+
+.object>#type_object {
+  text-decoration: none;
+  width: 350px;
+  height: 35px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.object>#type_object:hover,
+#message:hover {
+  border-bottom: 5px solid rgba(162, 0, 255, 0.372);
+}
+
+#error {
+  background-color: rgb(239, 118, 118);
+  color: black;
+  font-size: 26px;
+  top: 0;
+  text-align: center;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.go-top-btn {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: #27ae60;
+  bottom: 40px;
+  right: 50px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 60px;
+  color: white;
+  font-size: 32px;
+}

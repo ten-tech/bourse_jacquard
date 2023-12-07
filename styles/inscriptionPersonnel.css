@@ -1,0 +1,456 @@
+/* *****************************************************************************************
+==================> Ce fichier contient 3 css pour 3 différentes pages. <===================
+********************************************************************************************
+=======> Cette premiere partie correspond a celle de la page d'inscriptionPersonnel <=======*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.body{
+  background: linear-gradient(to right, #833ab4, rgb(121, 177, 241), #0a1086);
+  background-size: 400% 400%;
+  animation: animate-body 10s infinite ease-in-out;
+  width: 100%;
+}
+@keyframes animate-body {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+.body > input {
+  font-family: 'Poppins', sans-serif;
+}
+
+#formForForm {
+  background: rgba(197, 249, 250, 0.763);
+  width: 50%;
+  margin-left: 0%;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0px 40px 0px 40px;
+  margin-top: 20px;
+}
+#formForForm > #allH1 {
+  font-family: Lucida Consol;
+  font-size: 30px;
+  font-style: normal;
+  font-variant: small-caps;
+  font-weight: bold;
+  border-bottom: 20px double black;
+  text-align: center;
+}
+
+/* Cette partie commence à me faire chier */
+.containerForCivilite {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* Pour la civilité */
+.containerForCivilite #icone-radio-civilite {
+  display: inline-flex;
+}
+
+/* Screen Reader Only est pratique pour les aveugles et malvoyants */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 320px;
+}
+
+/* appearance : none lui indique de ne pas afficher le radio */
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+}
+
+input[type="radio"] + label {
+  border: 3px solid transparent;
+}
+
+input[type="radio"]:checked + label {
+  border-top: 5px double rgb(168, 232, 234);
+  border-bottom: 5px double rgb(4, 137, 246);
+  border-radius: 0px 10px 0px 10px;
+  animation: checkedAnimation 1s cubic-bezier(0.11, 0, 0.5, 0) 0s 1 normal
+    forwards;
+}
+
+@keyframes checkedAnimation {
+  0% {
+    opacity: 0;
+    transform: rotate(-540deg) scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+#icone-radio-civilite > label {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 20px;
+}
+
+#icone-radio-civilite label > span {
+  text-align: bottom;
+}
+
+#icone-radio-civilite:hover {
+  background-image: url("../icones/bourse1.jpg");
+  background-size: 100% 100%;
+  border-radius: 5px;
+}
+
+/*Pour le nom et prénom */
+
+legend {
+  color: black;
+  font-size: 20px;
+  font-family: monospace;
+  margin: 15px;
+
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: white;
+  box-shadow: 5px 5px 24px #000000;
+}
+
+#nameSection {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: white;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+#nameSection > div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#nameSection > div > input:hover {
+  border-bottom: 3px solid rgb(4, 137, 246);;
+  border-top: 3px solid rgb(4, 137, 246);;
+}
+section {
+  margin: 15px;
+  width: auto;
+  align-items: center;
+}
+
+#submit {
+  display: inline-block;
+  background-color: black;
+  color: #fff;
+  padding: 10px 40px;
+  border: 3px solid #3c67e3;
+  border-radius: 10px;
+  font-size: 20px;
+}
+#submit:hover {
+  animation: pulsate 2s ease-in-out;
+}
+
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 25px #5ddcff, 0 0 50px #4e00c2;
+  }
+}
+
+.login {
+  text-decoration: none;
+}
+.login:hover {
+    background-color: #8de7f4ac;
+}
+
+#inputID {
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  height: 30px;
+}
+
+#user_exists {
+  position: static;
+  background: rgba(33, 243, 254, 0.35);
+  box-shadow: 5px -5px 10px #2c3338,
+              -5px 5px 10px #aecbe2;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 90%;
+  font-size: 25px;
+  font-family: "Helvetica Neue";
+  text-align: center;
+
+}
+#user_exists > a {
+  text-decoration: none;
+}
+
+.erreur {
+  position: static;
+  background: rgba(33, 243, 254, 0.35);
+  box-shadow: 5px -5px 10px #2c3338,
+    -5px 5px 10px #aecbe2;
+  backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 90%;
+  font-size: 25px;
+  font-family: "Helvetica Neue";
+  text-align: center;
+}
+
+#globalerror {
+  position: static;
+  background: rgba(33, 243, 254, 0.35);
+  box-shadow: 5px -5px 10px #2c3338,
+    -5px 5px 10px #aecbe2;
+  backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  color: rgb(255, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.295);
+  width: 90%;
+  font-size: 25px;
+  font-family: "Helvetica Neue";
+  text-align: center;
+}
+
+/* *******************************************************************
+ ==================> CSS de la page de connexion <=====================
+ *********************************************************************/
+.container {
+  margin-top : 5%;
+  position: relative;
+  width: 80%;
+  margin-left: 10%;
+  min-height: 60vh;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow:  5px -5px 10px #2c3338,
+              -5px 5px 10px #aecbe2;
+  background: linear-gradient(to right, #e6dfeb, rgb(205, 225, 247), #95959d);
+  background-size: 400% 400%;
+  animation: animate-body 10s infinite ease-in-out;
+}
+
+ .forms-container {
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.connectionForm > h1 {
+  font-size: 2.2rem;
+  color: #444;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.loginSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: 50%;
+  background-color: transparent;
+}
+
+.loginSection > #divClass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-evenly;
+}
+#divClass >label {
+  font-size : 1.5em;
+font-family: Georgia,
+serif;
+text-align: center;
+}
+.NewPerso > p {
+  display: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+
+}
+
+#link-a {
+  text-decoration: none;
+}
+#link-a:hover {
+  background-color:rgb(168, 232, 234)
+}
+
+.advisor_checker {
+  position: static;
+  background: rgba(33, 243, 254, 0.35);
+  box-shadow: 5px -5px 10px #2c3338,
+              -5px 5px 10px #aecbe2;
+  backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 90%;
+  font-size: 25px;
+  font-family: "Helvetica Neue";
+  text-align: center;
+}
+
+/*******************************************************************************************
+==================> CSS de la page d'option d'inscription <=================================
+********************************************************************************************/
+.body {
+   background-size: 200%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.body > section > fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleChoice {
+  margin-left: 18%;
+  margin-right: 18%;
+  text-align: center;
+  border-bottom: 3px solid black;
+}
+.titleChoice:hover {
+  color: blueviolet;
+}
+
+#optionInscription {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 10px;
+  margin: 10px;
+}
+
+#option {
+  text-align: center;
+  position: sticky;
+  width: 450px;
+  height: 104px;
+  display: inline-block;
+
+  margin: 20px;
+  border-radius: 20px;
+}
+
+#optionInscription a:before,
+#optionInscription a:after {
+  border-radius: 20px;
+  height: 100px;
+  background: linear-gradient(95deg, #00ccff, #0e1538, #0e1538, #d400d4);
+}
+
+#optionInscription a:before,
+#optionInscription a:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: 0.5s;
+}
+
+#optionInscription a:hover:before {
+  inset: -15px;
+}
+#optionInscription a:hover:after {
+  inset: -15px;
+  filter: blur(70px);
+}
+
+#optionInscription a h3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background: rgb(2, 75, 94);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border-left: 3px double rgb(6, 64, 255);
+  border-right: 3px double rgb(247, 0, 0);
+
+  inset: 1px;
+  border-radius: 18px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+#optionInscription a h3:hover:before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: rgba(252, 236, 7, 0.281);
+  width: 100%;
+  height: 100%;
+}
